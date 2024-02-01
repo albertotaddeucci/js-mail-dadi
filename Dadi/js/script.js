@@ -7,7 +7,6 @@ Stabilire il vincitore, in base a chi fa il punteggio più alto.
 
 const buttonPlay = document.querySelector("#button-play");
 
-
 buttonPlay.addEventListener("click",
 function(){
     const randomNumUser = Math.floor((Math.random() * 6) + 1);
@@ -15,16 +14,21 @@ function(){
 
     if(randomNumPc > randomNumUser){
         document.getElementById("result").innerText = "Hai perso";
+        
     } else if (randomNumPc < randomNumUser){
         document.getElementById("result").innerText = "Hai vinto";
-
-    } else {
+        
+    }else{
         document.getElementById("result").innerText = "è un pareggio";
-
+        
     }
+    
+    
+    document.querySelector("#resultpc").innerText = `Risultato PC: ${randomNumPc}`
+    
+    
 
-    document.querySelector("#resultpc").innerText = `risultato PC: ${randomNumPc}`
-    document.querySelector("#resultuser").innerText = `Tuo risultato : ${randomNumUser}`
+    document.querySelector("#resultuser").innerText = `Il tuo risultato : ${randomNumUser}`
 
 
 }
