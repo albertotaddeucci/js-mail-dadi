@@ -14,7 +14,7 @@ function(){
             elementFound = true;
             document.querySelector("#result").innerText = "Email trovata";
             document.querySelector("#result").innerText += `. Si trova nella posizione ${[i+1]} della lista`;
-            document.querySelector("#result").className = "pt-3 text-success"
+            document.querySelector("#result").className = "pt-3 ps-5 text-success"
 
         } 
 

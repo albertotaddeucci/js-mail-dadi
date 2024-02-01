@@ -14,24 +14,28 @@ function(){
     const randomNumPc = Math.floor((Math.random() * 6) + 1);
 
     if(randomNumPc > randomNumUser){
-        document.getElementById("result").innerText = "Hai perso";
+        document.getElementById("result").innerText = "Hai perso :(";
+        document.getElementById("result").className += " text-danger";
+        document.getElementById("button-play").className += " d-none";
+        document.getElementById("paragraph").className += " d-none";     
+        
         
     } else if (randomNumPc < randomNumUser){
-        document.getElementById("result").innerText = "Hai vinto";
+        document.getElementById("result").innerText = "Hai vinto!";
+        document.getElementById("result").className += " text-success";
+        document.getElementById("button-play").className += " d-none";
+        document.getElementById("paragraph").className += " d-none";
         
     }else{
-        document.getElementById("result").innerText = "è un pareggio";
-        
+        document.getElementById("result").innerText = "È un pareggio";
+        document.getElementById("button-play").className += " d-none";
+        document.getElementById("paragraph").className += " d-none";
+       
     }
+        
+    document.querySelector("#resultpc").innerHTML = `Risultato PC: <b>${randomNumPc}</b>`
+    document.querySelector("#resultuser").innerHTML = `Il tuo risultato : <b>${randomNumUser}</b>`
     
-    
-    document.querySelector("#resultpc").innerText = `Risultato PC: ${randomNumPc}`
-    
-
-
-    document.querySelector("#resultuser").innerText = `Il tuo risultato : ${randomNumUser}`
-    
-
     document.querySelector("#cambio").src = `${images[randomNumPc-1]}`
     document.querySelector("#cambio2").src = `${images[randomNumUser-1]}`
 
