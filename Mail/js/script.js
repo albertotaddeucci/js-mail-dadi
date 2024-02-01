@@ -21,7 +21,8 @@ function(){
         if (emails[i] === inputEmail ){
             elementFound = true;
             document.querySelector("#result").innerText = "Email trovata";
-            document.querySelector("#result2").innerText = `Si trova nella posizione ${[i+1]} della lista`;
+            document.querySelector("#result").innerText += `. Si trova nella posizione ${[i+1]} della lista`;
+            document.querySelector("#result").className += " text-success"
 
         } 
 
@@ -29,6 +30,7 @@ function(){
 
     if (elementFound === false){
         document.querySelector("#result").innerText = "Email non trovata"
+        document.querySelector("#result").className += " text-danger"
     } 
     
     for(let i=0; i<emails.length; i++){
